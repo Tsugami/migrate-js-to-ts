@@ -1,22 +1,22 @@
-require('dotenv/config');
-const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors');
+import 'dotenv/config';
 
-const { notFound, errorHandler } = require('./middleware/errorHandler');
-const sequelize = require('./dbConnection');
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
 
-const User = require('./models/User');
-const Article = require('./models/Article');
-const Tag = require('./models/Tag');
-const Comment = require('./models/Comments');
+import { notFound, errorHandler } from './middleware/errorHandler';
+import sequelize from './dbConnection';
 
-const userRoute = require('./routes/users');
-const articleRoute = require('./routes/articles');
-const commentRoute = require('./routes/comments');
-const tagRoute = require('./routes/tags');
-const profileRoute = require('./routes/profile');
-const favouriteRoute = require('./routes/favourites');
+import User from './models/User';
+import Article from './models/Article';
+import Tag from './models/Tag';
+import Comment from './models/Comments';
+import userRoute from './routes/users';
+import articleRoute from './routes/articles';
+import commentRoute from './routes/comments';
+import tagRoute from './routes/tags';
+import profileRoute from './routes/profile';
+import favouriteRoute from './routes/favourites';
 
 const app = express();
 
@@ -33,12 +33,10 @@ Article.belongsTo(User);
 //many to many relation between article and taglist
 Article.belongsToMany(Tag, {
   through: 'TagList',
-  uniqueKey: false,
   timestamps: false,
 });
 Tag.belongsToMany(Article, {
   through: 'TagList',
-  uniqueKey: false,
   timestamps: false,
 });
 
