@@ -32,4 +32,5 @@ const checkConnection = async () => {
 
 checkConnection();
 
+module.exports = sequelize; // TODO remove this when migrated all
 export default sequelize;
