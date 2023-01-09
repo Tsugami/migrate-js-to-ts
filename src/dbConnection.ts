@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+import { Sequelize } from 'sequelize';
 
 //LOCAL CONNECTION
 /* const sequelize = new Sequelize('conduit','root','password',{
@@ -16,7 +16,7 @@ const { Sequelize } = require('sequelize');
 });
  */
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const sequelize = new Sequelize(process.env.DATABASE_URL!, {
   dialect: 'postgres',
   logging: false,
 });
@@ -32,4 +32,4 @@ const checkConnection = async () => {
 
 checkConnection();
 
-module.exports = sequelize;
+export default sequelize;
