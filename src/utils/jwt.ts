@@ -25,13 +25,13 @@ export const sign = async (user: SignedUser) => {
   });
 };
 
-export const decode = async (token: string) => {
+export const decode = async (token: string): Promise<SignedUser> => {
   const JWT_SECRET = 'qemsaslvjd-33r3:9i9vis3.';
   return new Promise((resolve, reject) => {
     jwt.verify(token, JWT_SECRET, (err, decoded) => {
       if (err) return reject(err);
 
-      return resolve(decoded);
+      return resolve(decoded as SignedUser);
     });
   });
 };
