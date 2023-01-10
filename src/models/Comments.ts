@@ -8,4 +8,4 @@ const Comment = sequelize.define('Comment', {
 });
 
 export default Comment;
-module.exports = Comment;
+module.exports = Comment; // todo remove this
