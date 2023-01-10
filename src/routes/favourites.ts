@@ -11,4 +11,4 @@ router.delete(
   FavoriteController.removeFavourite,
 ); //Unfavorite an article
 
-module.exports = router;
+export default router;

@@ -9,4 +9,4 @@ router.post('/users/login', UserController.loginUser); //Login for existing user
 router.get('/user', authByToken, UserController.getUserByEmail); //Gets the currently logged-in user
 router.patch('/user', authByToken, UserController.updateUserDetails); //Updated user information for current user
 
-module.exports = router;
+export default router;

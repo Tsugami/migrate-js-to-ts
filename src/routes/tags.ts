@@ -4,4 +4,4 @@ const router = express.Router();
 
 router.get('/', TagController.getAllTags); //Get all tags
 
-module.exports = router;
+export default router;

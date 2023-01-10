@@ -11,4 +11,4 @@ router.delete(
   CommentController.deleteComment,
 ); //Delete a comment for an article.
 
-module.exports = router;
+export default router;
